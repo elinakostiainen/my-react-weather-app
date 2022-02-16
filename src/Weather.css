@@ -36,10 +36,6 @@
   font-weight: 400;
 }
 
-.Weather .weather-temperature img {
-  margin: 0px 10px 14px 0px;
-}
-
 .Weather .weather-temperature .unit {
   font-size: medium;
   position: relative;
@@ -59,29 +55,6 @@
 
 .Weather .open-source-code:hover {
   color: #1c022b;
-}
-
-.Weather .weather-forecast {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.Weather .forecast-date {
-  font-size: 18px;
-}
-
-.Weather .forecast-description {
-  font-size: 12px;
-}
-
-.Weather .forecast-temperatures {
-  position: relative;
-  bottom: -14px;
-  font-size: 18px;
-}
-
-.Weather .min-temperature {
-  color: rgba(0, 0, 0, 0.5);
 }
 
 .Weather .search-city {
