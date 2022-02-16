@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-
-  const apiKey = "97cba78db357d130b3618e974d3aed4a";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
       ready: true,
       city: response.data.name,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       temperature: response.data.main.temp,
       icon: response.data.weather[0].icon,
@@ -21,45 +20,33 @@ export default function Weather(props) {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "97cba78db357d130b3618e974d3aed4a";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
         <div className="container">
           <div className="weather-app-wrapper">
             <div className="weather-app">
-              <h1 placeholder="Brisbane">{weatherData.city}</h1>
-              <div className="row">
-                <div className="col-6">
-                  <ul>
-                    <li>Wednesday </li>
-                    <li className="text-capitalize">
-                      {weatherData.description}
-                    </li>
-                    <br />
-                    <div className="weather-temperature">
-                      <img
-                        src="http://openweathermap.org/img/wn/02d@2x.png"
-                        alt={weatherData.description}
-                      />
-                      <span className="temperature">
-                        <strong>{Math.round(weatherData.temperature)}</strong>
-                      </span>
-                      <span className="unit">°C</span>
-                    </div>
-                  </ul>
-                </div>
-                <div className="col-6 extra-description">
-                  <ul>
-                    <li>Humidity: {weatherData.humidity}%</li>
-                    <li>Wind: {weatherData.wind} km/hr</li>
-                  </ul>
-                </div>
-              </div>
+              <WeatherInfo data={weatherData} />
               <br />
               <hr />
               <br />
               <div className="search-city">
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="row">
                     <div className="col-7">
                       <input
@@ -68,6 +55,7 @@ export default function Weather(props) {
                         autoFocus="on"
                         autoComplete="off"
                         className="form-control"
+                        onChange={handleCityChange}
                       />
                     </div>
                     <div className="col-2">
