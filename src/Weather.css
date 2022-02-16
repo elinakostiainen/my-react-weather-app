@@ -1,0 +1,95 @@
+.Weather {
+  font-family: "Rubik", sans-serif;
+  color: #222831;
+  background-size: 110%;
+}
+
+.Weather h1 {
+  font-size: 44px;
+}
+
+.Weather ul {
+  margin: 0;
+  padding: 0;
+}
+
+.Weather li {
+  list-style: none;
+}
+
+.Weather .weather-app-wrapper {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.Weather .weather-app {
+  background: #fafafa;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 25px;
+  border: 1px solid #222831;
+  border-radius: 8px;
+}
+
+.Weather .temperature {
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.Weather .weather-temperature img {
+  margin: 0px 10px 14px 0px;
+}
+
+.Weather .weather-temperature .unit {
+  font-size: medium;
+  position: relative;
+  top: -18px;
+}
+
+.Weather .extra-description {
+  position: relative;
+  left: 25%;
+}
+
+.Weather .open-source-code {
+  text-decoration: none;
+  color: #46066d;
+  transform: all 200ms ease-in-out;
+}
+
+.Weather .open-source-code:hover {
+  color: #1c022b;
+}
+
+.Weather .weather-forecast {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.Weather .forecast-date {
+  font-size: 18px;
+}
+
+.Weather .forecast-description {
+  font-size: 12px;
+}
+
+.Weather .forecast-temperatures {
+  position: relative;
+  bottom: -14px;
+  font-size: 18px;
+}
+
+.Weather .min-temperature {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Weather .search-city {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.Weather .btn {
+  background: rgba(163, 147, 235, 0.6);
+  border: 1px solid rgba(163, 147, 235, 0.5);
+}
