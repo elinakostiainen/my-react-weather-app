@@ -34,12 +34,15 @@
 .Weather .temperature {
   font-size: 42px;
   font-weight: 400;
+  margin-left: 10px;
+  position: relative;
+  top: -12px;
 }
 
 .Weather .weather-temperature .unit {
   font-size: medium;
   position: relative;
-  top: -18px;
+  top: -30px;
 }
 
 .Weather .extra-description {
