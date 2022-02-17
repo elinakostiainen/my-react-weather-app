@@ -46,8 +46,6 @@ export default function Weather(props) {
               <WeatherInfo data={weatherData} />
               <WeatherForecast coordinates={weatherData.coordinates} />
               <br />
-              <hr />
-              <br />
               <div className="search-city">
                 <form onSubmit={handleSubmit}>
                   <div className="row">
