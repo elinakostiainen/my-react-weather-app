@@ -22,6 +22,20 @@ export default function Weather(props) {
     });
   }
 
+  function retrievePosition(position) {
+    let latitdue = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiKey = "97cba78db357d130b3618e974d3aed4a";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitdue}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmitWithLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(retrievePosition);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -65,7 +79,10 @@ export default function Weather(props) {
                       </button>
                     </div>
                     <div className="col-1">
-                      <button className="btn btn-dark">
+                      <button
+                        className="btn btn-dark"
+                        onClick={handleSubmitWithLocation}
+                      >
                         <span role="img" aria-label="world">
                           🌍
                         </span>
