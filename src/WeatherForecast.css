@@ -29,5 +29,7 @@
 @media (max-width: 280px) {
   .WeatherForecast {
     max-width: 99%;
+    position: relative;
+    bottom: 30px;
   }
 }
