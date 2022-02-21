@@ -23,7 +23,7 @@
 }
 
 .Weather .weather-app {
-  background: #fafafa;
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
   margin-top: 5%;
   margin-bottom: 5%;
   padding: 25px;
@@ -52,12 +52,12 @@
 
 .Weather .open-source-code {
   text-decoration: none;
-  color: #46066d;
+  color: rgb(70, 6, 109);
   transform: all 200ms ease-in-out;
 }
 
 .Weather .open-source-code:hover {
-  color: #1c022b;
+  color: rgba(70, 6, 109, 0.6);
 }
 
 .Weather .search-city {
@@ -66,6 +66,11 @@
 }
 
 .Weather .btn {
-  background: rgba(163, 147, 235, 0.6);
-  border: 1px solid rgba(163, 147, 235, 0.5);
+  background: rgba(70, 6, 109, 0.5);
+  border: 1px solid rgba(70, 6, 109, 0.5);
+}
+
+.Weather .btn:hover {
+  background: rgba(70, 6, 109, 0.4);
+  border: 1px solid rgba(214, 195, 252, 0.8);
 }
