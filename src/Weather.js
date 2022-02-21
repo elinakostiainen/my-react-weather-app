@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
+import { Rings } from "react-loader-spinner";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -113,6 +114,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "Loading...";
+    return <Rings color="#ddc3fc" height={600} width={800} />;
   }
 }
