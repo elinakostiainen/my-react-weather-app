@@ -150,4 +150,26 @@
   .Weather footer p {
     font-size: 12px;
   }
+
+  .Weather .form-control {
+    font-size: 10px;
+  }
+
+  .Weather .btn {
+    font-size: 10px;
+    max-width: 200%;
+    padding: 6px;
+  }
+
+  .Weather .search {
+    position: relative;
+    right: 90%;
+    padding-right: 38px;
+  }
+
+  .Weather .search-location {
+    position: relative;
+    right: 200%;
+    padding-right: 16px;
+  }
 }
