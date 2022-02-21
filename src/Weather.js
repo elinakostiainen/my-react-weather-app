@@ -74,13 +74,13 @@ export default function Weather(props) {
                       />
                     </div>
                     <div className="col-2">
-                      <button className="btn btn-dark" type="submit">
+                      <button className="btn btn-dark search" type="submit">
                         Search
                       </button>
                     </div>
                     <div className="col-1">
                       <button
-                        className="btn btn-dark"
+                        className="btn btn-dark search-location"
                         onClick={handleSubmitWithLocation}
                       >
                         <span role="img" aria-label="world">

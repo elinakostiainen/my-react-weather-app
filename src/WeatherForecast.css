@@ -19,3 +19,15 @@
   position: relative;
   bottom: 6px;
 }
+
+@media (max-width: 740px) {
+  .WeatherForecast {
+    font-size: small;
+  }
+}
+
+@media (max-width: 280px) {
+  .WeatherForecast {
+    max-width: 99%;
+  }
+}
